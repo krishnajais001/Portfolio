@@ -7,11 +7,11 @@ const professionalExperience = [
   {
     type: 'EXPERIENCE',
     icon: <Briefcase size={16} />,
-    title: "Front End Internship",
-    institution: "MentorAide",
-    date: "Jan 2024 – Mar 2024",
-    description: "Designed and developed a responsive landing page for a mountain travel website using HTML, CSS, and JavaScript. Analyzed complex problems and worked with cross-functional teams to develop impactful solutions.",
-    status: "COMPLETED",
+    title: "AI Engineer Intern",
+    institution: "Quild",
+    date: "April 2026 – Present",
+    description: "Built AI-powered applications; design and implement APIs, plugins, and internal libraries. Design and implement multi-agent systems, workflows, and RAG pipelines; translate ideas into scalable architectures. Handle reliability, security, and edge cases; optimize performance, latency, and cost; deploy and maintain production applications.",
+    status: "ACTIVE",
   },
   {
     type: 'EXPERIENCE',
@@ -19,8 +19,8 @@ const professionalExperience = [
     title: "Quality Assurance Specialist",
     institution: "SolveLancer (Freelancer)",
     date: "Jan 2021 – Dec 2021",
-    description: "Utilized problem-solving skills to resolve complex issues as a Math problem solver. Ensured rigorous accuracy and quality as a dedicated quality checker, implementing effective architectural solutions.",
-    status: "EXCELLENT",
+    description: "Utilized problem-solving skills to resolve complex issues as a Math problem solver. Ensured accuracy and quality of answers as a quality checker.",
+    status: "COMPLETED",
   },
 ];
 
@@ -28,11 +28,11 @@ const academicJourney = [
   {
     type: 'EDUCATION',
     icon: <GraduationCap size={16} />,
-    title: "Bachelor of Technology in CSE",
-    institution: "GGSIPU, New Delhi",
+    title: "Bachelor of Technology in Computer Science & Engineering",
+    institution: "Guru Gobind Singh Indraprastha University, New Delhi",
     date: "Aug 2025 – Present",
-    description: "Pursuing Bachelor of Technology in Computer Science & Engineering. Structural engineering of software systems and performance-critical designs.",
-    status: "ACTIVE",
+    description: "Pursuing Bachelor of Technology in Computer Science & Engineering. Focusing on advanced software architectures and core computer science.",
+    status: "PURSUING",
   },
   {
     type: 'EDUCATION',
@@ -40,8 +40,8 @@ const academicJourney = [
     title: "Diploma in Computer Engineering - 76.63%",
     institution: "Aditya Institute of Technology, New Delhi",
     date: "Aug 2021 – July 2024",
-    description: "Foundational computer architecture and system logic. Completed with a high-density score of 76.63% in industrial computation.",
-    status: "ARCHIVED",
+    description: "Completed with an aggregate score of 76.63%. Groundwork in computer engineering principles and hardware-software interfacing.",
+    status: "COMPLETED",
   },
 ];
 
@@ -53,10 +53,18 @@ const achievements = [
   }
 ];
 
+const certifications = [
+  {
+    title: "National Cadet Corps A (NCC A)",
+    description: "Completed NCC A Certificate (Army Wing). Participated in parade drills, camps, and community service activities. Developed discipline, teamwork, and leadership skills.",
+    icon: <Award size={16} />,
+  }
+];
+
 const Timeline = () => {
   return (
     <section id="timeline" className="py-8 bg-background border-b border-foreground/5 relative overflow-hidden scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-10 space-y-8">
+      <div className="max-w-7xl mx-auto px-10 space-y-12">
         
         {/* PROFESSIONAL SECTION */}
         <div className="space-y-4">
@@ -76,7 +84,7 @@ const Timeline = () => {
               >
                 <div className="absolute -left-[57px] top-1.5 w-4 h-4 border-2 border-foreground bg-background rotate-45 z-10 group-hover:bg-foreground transition-colors" />
                 
-                <div className="space-y-2">
+                <div className="space-y-2 text-left">
                   <div className="flex flex-col gap-1">
                     <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight leading-none">{event.title}</h3>
                     <p className="text-xs sm:text-sm font-bold text-foreground/40 uppercase tracking-widest">{event.institution}</p>
@@ -109,7 +117,7 @@ const Timeline = () => {
               >
                 <div className="absolute -left-[57px] top-1.5 w-4 h-4 border-2 border-foreground bg-background rotate-45 z-10 group-hover:bg-foreground transition-colors" />
                 
-                <div className="space-y-2">
+                <div className="space-y-2 text-left">
                   <div className="flex flex-col gap-1">
                     <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight leading-none">{event.title}</h3>
                     <p className="text-xs sm:text-sm font-bold text-foreground/40 uppercase tracking-widest">{event.institution}</p>
@@ -124,34 +132,67 @@ const Timeline = () => {
           </div>
         </div>
 
-        {/* ACHIEVEMENTS SECTION */}
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight wrap-break-word leading-none">Key <span className="text-foreground/20">Achievements</span></h2>
-            <div className="w-12 sm:w-16 h-1.5 bg-foreground rounded-none"></div>
+        {/* ACHIEVEMENTS & CERTIFICATIONS ROW */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-4">
+          {/* ACHIEVEMENTS */}
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight wrap-break-word leading-none">Key <span className="text-foreground/20">Achievements</span></h2>
+              <div className="w-12 sm:w-16 h-1.5 bg-foreground rounded-none"></div>
+            </div>
+
+            <div className="space-y-4 border-l border-foreground/10 pl-12 relative">
+              {achievements.map((achievement, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  <div className="absolute -left-[57px] top-1.5 w-4 h-4 border-2 border-foreground bg-background rotate-45 z-10 group-hover:bg-foreground transition-colors" />
+                  
+                  <div className="space-y-2 text-left">
+                     <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight leading-none">{achievement.title}</h3>
+                     <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed font-medium uppercase tracking-tight max-w-xl">
+                      {achievement.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          <div className="space-y-4 border-l border-foreground/10 pl-12 relative">
-            {achievements.map((achievement, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative group"
-              >
-                <div className="absolute -left-[57px] top-1.5 w-4 h-4 border-2 border-foreground bg-background rotate-45 z-10 group-hover:bg-foreground transition-colors" />
-                
-                <div className="space-y-2">
-                   <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight leading-none">{achievement.title}</h3>
-                   <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed font-medium uppercase tracking-tight max-w-2xl">
-                    {achievement.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+          {/* CERTIFICATIONS */}
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight wrap-break-word leading-none">Certifications</h2>
+              <div className="w-12 sm:w-16 h-1.5 bg-foreground rounded-none"></div>
+            </div>
+
+            <div className="space-y-4 border-l border-foreground/10 pl-12 relative">
+              {certifications.map((cert, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  <div className="absolute -left-[57px] top-1.5 w-4 h-4 border-2 border-foreground bg-background rotate-45 z-10 group-hover:bg-foreground transition-colors" />
+                  
+                  <div className="space-y-2 text-left">
+                     <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight leading-none">{cert.title}</h3>
+                     <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed font-medium uppercase tracking-tight max-w-xl">
+                      {cert.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   );

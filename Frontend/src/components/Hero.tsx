@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="flex items-center justify-center gap-6 mb-4 overflow-hidden">
               <div className="w-16 h-[2px] bg-foreground/10 shrink-0"></div>
               <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.5em] text-foreground/40 whitespace-nowrap shrink-0">
-                ASPIRING SOFTWARE ENGINEER
+                AI ENGINEER INTERN @ QUILD
               </span>
               <div className="w-16 h-[2px] bg-foreground/10 shrink-0"></div>
             </div>
@@ -21,36 +21,21 @@ const Hero = () => {
             </h1>
             
             <motion.p 
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.08, delayChildren: 0.4 }
-                }
-              }}
-              className="text-base sm:text-xl text-foreground/60 max-w-2xl leading-tight font-medium uppercase tracking-tight mx-auto"
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-base sm:text-xl text-foreground/60 max-w-2xl leading-tight font-medium tracking-tight mx-auto"
             >
-              {"Architecture full stack development Bridging the gap between software precision and structural design".split(" ").map((word, i) => (
-                <motion.span
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 10 },
-                    visible: { opacity: 1, y: 0 }
-                  }}
-                  className="inline-block mr-[0.25em]"
-                >
-                  {word}
-                </motion.span>
-              ))}
+              Full Stack & GenAI Developer focused on building modern web applications, AI agents, automation workflows, and production-ready AI solutions.
             </motion.p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-0 border border-foreground/20 w-full sm:w-fit items-stretch group overflow-hidden bg-background shadow-2xl shadow-foreground/5">
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/14SyeDMjf0CyZgXewLMdMKrDtiy0rBxaw/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-4 px-12 py-6 bg-foreground text-background font-black uppercase tracking-widest hover:bg-foreground/90 transition-all text-sm"
             >
               DOWNLOAD_CV
@@ -60,9 +45,9 @@ const Hero = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 pt-12 border-t border-foreground/10 w-full max-w-4xl">
             {[
-              { label: "STATUS", value: "SEEKING INTERNSHIPS" },
-              { label: "LOCATION", value: "DELHI NCR" },
-              { label: "SPECIALIZATION", value: "FULL STACK DEVELOPMENT" },
+              { label: "STATUS", value: "BUILDING & LEARNING" },
+              { label: "LOCATION", value: "GURGAON, HARYANA" },
+              { label: "SPECIALIZATION", value: "FULL STACK & GENAI" },
               { label: "EDUCATION", value: "B.TECH CSE" }
             ].map((stat, idx) => (
               <div key={idx} className="space-y-4">

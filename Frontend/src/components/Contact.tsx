@@ -47,7 +47,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: <Mail size={16} />, label: "EMAIL", value: "jaiskrishna06@gmail.com", href: "mailto:jaiskrishna06@gmail.com" },
     { icon: <Phone size={16} />, label: "PHONE", value: "+91 6204815018", href: "tel:+916204815018" },
-    { icon: <MapPin size={16} />, label: "LOCATION", value: "DELHI, INDIA", href: "#" },
+    { icon: <MapPin size={16} />, label: "LOCATION", value: "GURGAON, HARYANA", href: "#" },
   ];
 
   return (

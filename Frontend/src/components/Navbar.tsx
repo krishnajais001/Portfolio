@@ -4,7 +4,6 @@ import X from 'lucide-react/dist/esm/icons/x.js';
 import Sun from 'lucide-react/dist/esm/icons/sun.js';
 import Moon from 'lucide-react/dist/esm/icons/moon.js';
 import MapPin from 'lucide-react/dist/esm/icons/map-pin.js';
-import Palette from 'lucide-react/dist/esm/icons/palette.js';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -28,15 +27,10 @@ const Navbar = () => {
     }
   }, [darkMode]);
 
-  const [designSystem, setDesignSystem] = useState(() => {
-    return localStorage.getItem('design-system') || 'brutalist';
-  });
-
   useEffect(() => {
-    document.documentElement.classList.remove('design-brutalist', 'design-modern');
-    document.documentElement.classList.add(`design-${designSystem}`);
-    localStorage.setItem('design-system', designSystem);
-  }, [designSystem]);
+    document.documentElement.classList.remove('design-modern');
+    document.documentElement.classList.add('design-brutalist');
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +65,7 @@ const Navbar = () => {
             <div className="px-5 py-2 border border-foreground/10 bg-foreground/2 flex items-center gap-3">
               <MapPin size={12} className="text-foreground/20" />
               <span className="text-[10px] font-black uppercase tracking-widest text-foreground/40">
-                LOC: DELHI, INDIA
+                LOC: GURGAON, HARYANA
               </span>
             </div>
           </div>
@@ -96,28 +90,11 @@ const Navbar = () => {
             >
               {darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
-            <button 
-              onClick={() => setDesignSystem(designSystem === 'brutalist' ? 'modern' : 'brutalist')}
-              className="p-2 hover:bg-foreground/5 transition-colors relative group border border-foreground/10"
-              title={`Switch to ${designSystem === 'brutalist' ? 'Modern' : 'Brutalist'} Design`}
-            >
-              <Palette size={18} className={designSystem === 'modern' ? 'text-primary' : ''} />
-              <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-[8px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50">
-                {designSystem === 'brutalist' ? 'MODERN_UI' : 'BRUTAL_UI'}
-              </span>
-            </button>
           </div>
         </div>
 
         {/* Mobile Actions */}
         <div className="md:hidden flex items-center space-x-4">
-          <button 
-            onClick={() => setDesignSystem(designSystem === 'brutalist' ? 'modern' : 'brutalist')}
-            className="p-1.5 border border-foreground/10"
-            aria-label="Toggle Design System"
-          >
-            <Palette size={18} />
-          </button>
           <button 
             onClick={() => setDarkMode(!darkMode)}
             className="p-1 text-foreground"

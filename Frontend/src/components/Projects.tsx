@@ -8,73 +8,33 @@ import { useState } from 'react';
 const projects = [
   {
     id: "01",
-    title: "Motion Workspace",
+    title: "Motion Note-Taking App",
     problem: "Fragmented productivity workflows across multiple tabs lead to cognitive overhead and decreased study efficiency.",
-    solution: "Engineered a unified brutalist workspace integrating a real-time study engine, Excalidraw whiteboarding, and persistent streak tracking.",
-    stack: ["REACT", "SUPABASE", "EXCALIDRAW", "NODE.JS", "TAILWIND", "FRAMER MOTION", "EXPRESS"],
+    solution: "Built a full-stack Notion-style note-taking app with rich text editing, nested pages, and real-time data persistence integrating a Study Mode with timer-based session tracking and Excalidraw whiteboarding.",
+    stack: ["REACT.JS", "NODE.JS", "EXPRESS", "SUPABASE", "EXCALIDRAW API"],
     image: "https://images.unsplash.com/photo-1542621334-a254cf47733d?max-w=800",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
     id: "02",
-    title: "EcoShop Architecture",
-    problem: "Legacy e-commerce platforms suffer from slow page transitions and insecure payment processing flows.",
-    solution: "Engineered a high-performance full-stack engine with secure Stripe integration and Redux-managed global state.",
-    stack: ["REACT", "NODE", "MONGODB"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800",
-    liveUrl: "https://ecoshop-mern.vercel.app",
-    githubUrl: "https://github.com/krishnajais/ecoshop",
+    title: "Multi-Agent Email System",
+    problem: "Manual email triage and response flows create operational bottlenecks and delay critical customer communication.",
+    solution: "Built an AI-powered Gmail agent using n8n that monitors incoming emails, classifies intent, and automatically drafts or sends replies using LLM processing in a multi-agent system.",
+    stack: ["N8N", "OPENAI", "CLAUDE", "LLM", "GMAIL API"],
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800",
+    liveUrl: "#",
+    githubUrl: "#",
   },
   {
     id: "03",
-    title: "AI Neural Interface",
-    problem: "Standard chatbots lack deep context awareness and fail to retrieve specific knowledge from specialized datasets.",
-    solution: "Designed a multi-layered infrastructure using GPT-4 and vector-retrieval for accurate, context-rich responses.",
-    stack: ["NEXT.JS", "OPENAI", "SUPABASE"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
-    liveUrl: "https://ai-chat-krishna.vercel.app",
-    githubUrl: "https://github.com/krishnajais/ai-chat",
-  },
-  {
-    id: "04",
-    title: "DevSync Pipeline",
-    problem: "Remote development teams face high latency and desynchronization when managing real-time collaborative tasks.",
-    solution: "Built a robust sync system using Socket.io to ensure instantaneous state updates across all team members.",
-    stack: ["REACT", "NODE", "SOCKET.IO"],
-    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800",
-    liveUrl: "https://devsync-app.onrender.com",
-    githubUrl: "https://github.com/krishnajais/devsync",
-  },
-  {
-    id: "05",
-    title: "Nexus Cloud",
-    problem: "Centralized file storage solutions often lack transparent end-to-end encryption for sensitive enterprise data.",
-    solution: "Implemented a distributed management system with AES-256 encryption and optimized concurrency handling.",
-    stack: ["REACT", "FIREBASE", "TYPESCRIPT"],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800",
-    liveUrl: "https://nexus-cloud.vercel.app",
-    githubUrl: "https://github.com/krishnajais/nexus",
-  },
-  {
-    id: "06",
-    title: "BlockEstate Ledger",
-    problem: "Real estate transactions are historically slow, expensive, and prone to document tampering or fraud.",
-    solution: "Developed a decentralized tracking system using Solidity smart contracts to create immutable property records.",
-    stack: ["REACT", "SOLIDITY", "ETHERS.JS"],
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800",
-    liveUrl: "https://blockestate.online",
-    githubUrl: "https://github.com/krishnajais/blockestate",
-  },
-  {
-    id: "07",
-    title: "Lumina Analytics",
-    problem: "Visualizing enterprise-scale telemetry data hits performance bottlenecks with traditional rendering methods.",
-    solution: "Architected a visualization platform using Redis caching and high-performance, real-time Chart.js integration.",
-    stack: ["NEXT.JS", "CHART.JS", "REDIS", "TYPESCRIPT"],
+    title: "AI Content & Data Platform",
+    problem: "Generating, summarizing, and reporting on high-velocity data feeds requires manual effort and lacks real-time insights.",
+    solution: "Built an AI-powered automation platform using n8n and LLMs for content generation, real-time data analysis, summarization, reporting, and intelligent workflow automation.",
+    stack: ["N8N", "LLM", "OPENAI", "CLAUDE", "WORKFLOW AUTOMATION"],
     image: "https://images.unsplash.com/photo-1551288049-bbdac8626ad1?w=800",
-    liveUrl: "https://lumina-analytics.vercel.app",
-    githubUrl: "https://github.com/krishnajais/lumina",
+    liveUrl: "#",
+    githubUrl: "#",
   }
 ];
 
@@ -193,7 +153,7 @@ const Projects = () => {
           </AnimatePresence>
         </div>
 
-        <div className="grid grid-cols-5 gap-4 mt-2">
+        <div className="grid grid-cols-3 gap-4 mt-2">
           {projects.map((_, idx) => (
             <div 
               key={idx}

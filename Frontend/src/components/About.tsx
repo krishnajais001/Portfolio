@@ -14,7 +14,7 @@ const About = () => {
   const infoItems = [
     { icon: <Mail size={14} />, label: "EMAIL", value: "jaiskrishna06@gmail.com" },
     { icon: <Phone size={14} />, label: "PHONE", value: "+91 6204815018" },
-    { icon: <MapPin size={14} />, label: "LOCATION", value: "DELHI, INDIA" },
+    { icon: <MapPin size={14} />, label: "LOCATION", value: "GURGAON, HARYANA" },
     { icon: <GraduationCap size={14} />, label: "EDUCATION", value: "B.TECH COMPUTER SCIENCE" },
   ];
 
@@ -65,15 +65,15 @@ const About = () => {
               <div className="border border-foreground p-6 sm:p-10 space-y-8 relative z-10 bg-background">
                 <ul className="space-y-8">
                   {[
-                    { title: "MERN Stack Development", desc: "Building scalable, performat systems." },
-                    { title: "Digital Blueprint Design", desc: "Constructing high-density UI architectures." },
-                    { title: "Database Integrity", desc: "Structuring reliable and scalable data models." },
-                    { title: "System Workflow", desc: "Optimizing dev cycles and CI/CD pipelines." }
+                    { title: "Full Stack Development", desc: "React, Next.js, Node.js, TypeScript, and scalable backend architectures." },
+                    { title: "AI Engineering", desc: "LLMs, RAG Systems, Prompt Engineering, AI Agents, and GenAI Applications." },
+                    { title: "Database & Infrastructure", desc: "PostgreSQL, MongoDB, Supabase, Redis, and cloud deployment workflows." },
+                    { title: "Automation Systems", desc: "n8n, APIs, multi-agent workflows, and intelligent business process automation." }
                   ].map((focus, idx) => (
                     <li key={idx} className="space-y-2 border-l-2 border-foreground/10 pl-6 sm:pl-8 relative">
                       <div className="absolute top-1/2 -left-1.5 w-2 h-2 bg-foreground rotate-45"></div>
                       <span className="font-black text-xs uppercase tracking-widest text-foreground block">{focus.title}</span>
-                      <span className="text-[10px] sm:text-[11px] text-foreground/40 font-bold uppercase tracking-tight">{focus.desc}</span>
+                      <span className="text-[10px] sm:text-[11px] text-foreground/40 font-bold tracking-tight">{focus.desc}</span>
                     </li>
                   ))}
                 </ul>
@@ -88,7 +88,7 @@ const About = () => {
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 overflow-visible">
             {[
               { icon: <Github size={20} className="sm:w-5 sm:h-5" />, name: "GITHUB", href: "https://github.com/krishnajais001" },
-              { icon: <Linkedin size={20} className="sm:w-5 sm:h-5" />, name: "LINKEDIN", href: "https://www.linkedin.com/in/krishnajais/" },
+              { icon: <Linkedin size={20} className="sm:w-5 sm:h-5" />, name: "LINKEDIN", href: "https://www.linkedin.com/in/krishnajaiswal06/" },
               { icon: <Mail size={18} className="sm:w-4.5 sm:h-4.5" />, name: "EMAIL", href: "mailto:jaiskrishna06@gmail.com" },
               { icon: <LeetCode size={20} className="sm:w-5 sm:h-5" />, name: "LEETCODE", href: "https://leetcode.com/u/krishnajais/" },
               { icon: <CodeChef size={20} className="sm:w-5 sm:h-5" />, name: "CODECHEF", href: "https://www.codechef.com/users/krishnajais" },
@@ -96,7 +96,7 @@ const About = () => {
               { icon: <HackerRank size={20} className="sm:w-5 sm:h-5" />, name: "HACKERRANK", href: "https://www.hackerrank.com/profile/krishnajais" },
               { icon: <GFG size={20} className="sm:w-5 sm:h-5" />, name: "GFG", href: "https://www.geeksforgeeks.org/user/jaiskrishna06/" },
               { icon: <Twitter size={20} className="sm:w-5 sm:h-5" />, name: "TWITTER", href: "https://x.com/KrishnaJais1432" },
-              { icon: <FileDown size={20} className="sm:w-5 sm:h-5" />, name: "RESUME", href: "/resume.pdf" },
+              { icon: <FileDown size={20} className="sm:w-5 sm:h-5" />, name: "RESUME", href: "https://drive.google.com/file/d/14SyeDMjf0CyZgXewLMdMKrDtiy0rBxaw/view?usp=sharing" },
             ].map((social, idx) => (
               <a
                 key={idx}

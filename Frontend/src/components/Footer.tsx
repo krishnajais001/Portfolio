@@ -6,8 +6,18 @@ import FileDown from 'lucide-react/dist/esm/icons/file-down.js';
 import LeetCode from './icons/LeetCode.js';
 import { CodeChef, Codeforces, GFG, HackerRank } from './icons/PlatformIcons.js';
 
+import { useState, useEffect } from 'react';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [currentDate, setCurrentDate] = useState(() => new Date().toLocaleDateString('en-US'));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDate(new Date().toLocaleDateString('en-US'));
+    }, 60000); // Check/update every minute
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <footer className="py-20 bg-background border-t border-foreground/10 relative z-10 overflow-hidden">
@@ -19,10 +29,10 @@ const Footer = () => {
               KRISHNA <span className="text-foreground/20">JAISWAL</span>
             </h2>
             <div className="border-l-2 border-foreground/5 pl-8 py-1 space-y-2">
-              <p className="text-[10px] sm:text-[11px] text-foreground/40 font-black uppercase tracking-[0.2em] leading-relaxed text-left">
-                Architecture fullstack development <br />
-                Bridging the gap between software precision <br />
-                and structural design
+              <p className="text-[10px] sm:text-[11px] text-foreground/40 font-bold tracking-wider leading-relaxed text-left">
+                Full Stack & GenAI Developer focused on building <br />
+                modern web applications, AI agents, automation <br />
+                workflows, and production-ready AI solutions.
               </p>
             </div>
           </div>
@@ -45,7 +55,7 @@ const Footer = () => {
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               {[
                 { icon: <Github size={18} />, name: "GITHUB", href: "https://github.com/krishnajais001" },
-                { icon: <Linkedin size={18} />, name: "LINKEDIN", href: "https://www.linkedin.com/in/krishnajais/" },
+                { icon: <Linkedin size={18} />, name: "LINKEDIN", href: "https://www.linkedin.com/in/krishnajaiswal06/" },
                 { icon: <Mail size={16} />, name: "EMAIL", href: "mailto:jaiskrishna06@gmail.com" },
                 { icon: <LeetCode size={18} />, name: "LEETCODE", href: "https://leetcode.com/u/krishnajais/" },
                 { icon: <CodeChef size={18} />, name: "CODECHEF", href: "https://www.codechef.com/users/krishnajais" },
@@ -53,7 +63,7 @@ const Footer = () => {
                 { icon: <HackerRank size={18} />, name: "HACKERRANK", href: "https://www.hackerrank.com/profile/krishnajais" },
                 { icon: <GFG size={18} />, name: "GFG", href: "https://www.geeksforgeeks.org/user/jaiskrishna06/" },
                 { icon: <Twitter size={18} />, name: "TWITTER", href: "https://x.com/KrishnaJais1432" },
-                { icon: <FileDown size={18} />, name: "RESUME", href: "/resume.pdf" },
+                { icon: <FileDown size={18} />, name: "RESUME", href: "https://drive.google.com/file/d/14SyeDMjf0CyZgXewLMdMKrDtiy0rBxaw/view?usp=sharing" },
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -82,12 +92,12 @@ const Footer = () => {
             <div className="relative flex flex-wrap items-center justify-center gap-6 z-10">
               <div className="px-6 py-2.5 border border-foreground/10 bg-background flex items-center justify-center">
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/30">
-                  DATE: 3/28/2026
+                  DATE: {currentDate}
                 </span>
               </div>
               <div className="px-6 py-2.5 border border-foreground/10 bg-background flex items-center justify-center">
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/30">
-                  LOC: DELHI, INDIA
+                  LOC: GURGAON, HARYANA
                 </span>
               </div>
             </div>
