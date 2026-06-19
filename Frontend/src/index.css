@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000000;
+  --color-secondary: #52525b;
+  --color-accent: #27272a;
+  --color-background: #ffffff;
+  --color-foreground: #09090b; /* zinc-950 */
+  
+  --font-sans: "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+/* Dark mode overrides (Manual Toggle) */
+.dark {
+  --color-background: #09090b; /* zinc-950 */
+  --color-foreground: #fafafa; /* zinc-50 */
+  --color-primary: #818cf8; /* Indigo-400 for dark mode */
+}
+
+:root {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: background-color 0s, color 0s; /* Instant step transitions */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Design System Themes */
+
+/* 1. BRUTALIST (Default) */
+.design-brutalist * {
+  border-radius: 0 !important;
+}
+
+.design-brutalist .card {
+  border: 1.5px solid currentColor;
+}
+
+/* 2. MODERN / GLASSMORPHISM */
+.design-modern {
+  --color-primary: #6366f1; /* Indigo 500 */
+}
+
+.design-modern * {
+  border-radius: 1rem;
+}
+
+.design-modern .card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark .vignette {
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.design-modern .hover-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+/* Base Styles */
+:root {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Utilities */
+.blueprint-grid {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.05;
+}
+
+.hover-invert:hover {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
